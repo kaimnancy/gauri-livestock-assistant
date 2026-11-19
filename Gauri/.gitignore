@@ -1,0 +1,76 @@
+# --- Field Research Privacy & Raw Audio ---
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.aac
+*.opus
+*.flac
+voice_notes/
+raw_audio/
+raw_interviews/
+private_data/
+
+# --- Secrets & Environment Variables ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+service_account*.json
+
+# --- Python & Machine Learning ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+
+# Model weights, datasets & experiment logs
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.pkl
+*.joblib
+wandb/
+mlruns/
+data/raw/
+
+# --- Node / Frontend (if applicable) ---
+node_modules/
+.next/
+.vite/
+
+# --- Temporary Office / Document Lock Files ---
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp
+
+# --- Logs & Caches ---
+*.log
+logs/
+tmp/
+temp/
+.cache/
+
+# --- IDE & OS Files ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
