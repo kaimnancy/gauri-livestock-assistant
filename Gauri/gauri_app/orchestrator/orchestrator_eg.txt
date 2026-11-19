@@ -1,0 +1,45 @@
+Input: Rani, the black buffalo, got her FMD shot on 3 November.
+Output: {"routes": ["RECORD"], "animal_ref": "Rani, the black buffalo", "medication_requested": false, "missing_info": [], "reason": "Factual vaccination date reported for an identified animal."}
+
+Input: Gauri has not eaten fodder since yesterday.
+Output: {"routes": ["TRIAGE"], "animal_ref": "Gauri", "medication_requested": false, "missing_info": [], "reason": "Active symptom of appetite loss reported."}
+
+Input: She is not doing well.
+Output: {"routes": ["CLARIFY"], "animal_ref": null, "medication_requested": false, "missing_info": ["animal_identity", "symptom_details"], "reason": "No animal is identified and no specific symptom is described."}
+
+Input: My Murrah buffalo's stomach is blown up tight like a drum and she cannot stand up.
+Output: {"routes": ["EMERGENCY"], "animal_ref": "Murrah buffalo", "medication_requested": false, "missing_info": [], "reason": "Severe bloating and inability to stand indicate a life-threatening emergency."}
+
+Input: Lakshmi has fever and a swollen udder since morning, which injection should I give her?
+Output: {"routes": ["TRIAGE"], "animal_ref": "Lakshmi", "medication_requested": true, "missing_info": [], "reason": "Active symptoms require triage despite the owner asking for an injection."}
+
+Input: The white cow with ear tag B-14 is limping today, and she gave birth to a female calf on 10 October.
+Output: {"routes": ["TRIAGE", "RECORD"], "animal_ref": "white cow with ear tag B-14", "medication_requested": false, "missing_info": [], "reason": "Active limping takes priority for triage, followed by recording the calving date."}
+
+Input: Bhuri had diarrhea last month but she is completely fine now.
+Output: {"routes": ["RECORD"], "animal_ref": "Bhuri", "medication_requested": false, "missing_info": [], "reason": "Recovered past illness is recorded as health history rather than active triage."}
+
+Input: I am sending a photo of my new cow, please check her breed and body condition.
+Output: {"routes": ["HEALTH_CHECK"], "animal_ref": "new cow", "medication_requested": false, "missing_info": [], "reason": "Owner uploaded a photo for breed and body condition assessment."}
+
+Input: At what age should a buffalo calf get its first FMD vaccine?
+Output: {"routes": ["GENERAL_QUERY"], "animal_ref": null, "medication_requested": false, "missing_info": [], "reason": "General dairy vaccination schedule question with no specific sick animal."}
+
+Input: Tell me the dose of paracetamol tablet for a buffalo.
+Output: {"routes": ["OUT_OF_SCOPE"], "animal_ref": null, "medication_requested": true, "missing_info": [], "reason": "Pure medication dosage request with no symptoms or record update mentioned."}
+
+Context: pending_route=RECORD, pending_question="Which animal received the vaccine?"
+Input: It was Rani.
+Output: {"routes": ["RECORD"], "animal_ref": "Rani", "medication_requested": false, "missing_info": [], "reason": "Owner answered the pending clarification question so the record task can resume."}
+
+Input: The user's buffalo named Tara is not eating since morning.
+Output: {"routes": ["TRIAGE"], "animal_ref": "Tara", "medication_requested": false, "missing_info": [], "reason": "Active symptom of not eating reported for Tara."}
+
+Input: The user says their buffalo Champa got her FMD vaccine on 12 November.
+Output: {"routes": ["RECORD"], "animal_ref": "Champa, buffalo", "medication_requested": false, "missing_info": [], "reason": "Factual vaccination date reported for Champa."}
+
+Input: The user says their buffalo has livestock insurance.
+Output: {"routes": ["RECORD"], "animal_ref": "buffalo", "medication_requested": false, "missing_info": [], "reason": "Insurance status update reported for an unnamed buffalo."}
+
+Input: The user says Ganga does not have a Pashudhan government ID, so they are sharing this photo of her to identify her.
+Output: {"routes": ["RECORD"], "animal_ref": "Ganga", "medication_requested": false, "missing_info": [], "reason": "Owner updated Pashudhan ID status to no and shared an identification photo for the animal record."}

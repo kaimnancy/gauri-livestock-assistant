@@ -1,0 +1,44 @@
+{
+  "user_id": "nancy",
+  "animal_id": "nancy_705f08",
+  "pashuadhan_id_exists": "no",
+  "pashuadhan_id": null,
+  "insurance_taken": "no",
+  "insurance_info": null,
+  "local_name": "Ganga",
+  "species_or_breed": "cow",
+  "last_vaccinated": "2026-11-10",
+  "health_condition": null,
+  "local_vet_number": "9811012345",
+  "image_metadata": [
+    {
+      "image_path": "data/images/nancy/nancy cow.jfif",
+      "description": "Identification photo of Ganga",
+      "uploaded_at": "2026-11-19 19:57 UTC"
+    }
+  ],
+  "vaccination_table": [
+    {
+      "date": "2026-11-10",
+      "vaccine_name": "FMD",
+      "notes": "",
+      "source": "OWNER_REPORTED",
+      "recorded_at": "2026-11-19 19:57 UTC"
+    }
+  ],
+  "health_condition_table": [],
+  "health_record_table": [
+    {
+      "timestamp": "2026-11-19 19:57 UTC",
+      "context_update": "Registered Ganga, a white cow, and logged her FMD vaccination on 2026-11-10.",
+      "source": "OWNER_REPORTED"
+    },
+    {
+      "timestamp": "2026-11-19 19:57 UTC",
+      "context_update": "Updated profile record for Ganga.",
+      "source": "OWNER_REPORTED"
+    }
+  ],
+  "created_at": "2026-11-19 19:57 UTC",
+  "updated_at": "2026-11-19 19:57 UTC"
+}

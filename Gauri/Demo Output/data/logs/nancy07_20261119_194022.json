@@ -1,0 +1,195 @@
+[
+  {
+    "turn": 1,
+    "timestamp": "2026-11-19 19:41:04 UTC",
+    "latency_sec": 6.65,
+    "input": {
+      "english_description": "hiii",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": null
+    },
+    "task_id": "task_8273dac9",
+    "routing_decision": {
+      "routes": [
+        "GENERAL_QUERY"
+      ],
+      "animal_ref": null,
+      "medication_requested": false,
+      "missing_info": [],
+      "reason": "General greeting without specific sick animal or health concern."
+    },
+    "agent_hops": [
+      {
+        "from": "orchestrator",
+        "to": "GENERAL_QUERY",
+        "latency_sec": 0.0,
+        "task_sent": {
+          "task_id": "task_8273dac9",
+          "english_description": "hiii",
+          "intent": "GENERAL_QUERY",
+          "animal_id": null,
+          "animal_ref": null,
+          "animal_context": "Registered animals for this user: None (new user).",
+          "previous_context": null,
+          "medication_requested": false,
+          "image_path": null,
+          "extra_data": {
+            "user_id": "nancy07",
+            "orchestrator_reason": "General greeting without specific sick animal or health concern."
+          }
+        },
+        "response_received": {
+          "task_id": "task_8273dac9",
+          "agent_name": "general_query_stub",
+          "status": "SUCCESS",
+          "summary": "[STUB] General dairy guidance retrieved for: hiii",
+          "proposed_updates": [],
+          "clarification_questions": [],
+          "missing_fields": [],
+          "data": {}
+        }
+      }
+    ],
+    "internal_logs": [
+      "[INFO] gauri_app.orchestrator.agent: Router raw output: {\"routes\": [\"GENERAL_QUERY\"], \"animal_ref\": null, \"medication_requested\": false, \"missing_info\": [], \"reason\": \"General greeting without specific sick animal or health concern.\"}"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": false,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: None (new user).",
+    "final_reply": "[STUB] General dairy guidance retrieved for: hiii"
+  },
+  {
+    "turn": 2,
+    "timestamp": "2026-11-19 19:41:34 UTC",
+    "latency_sec": 12.66,
+    "input": {
+      "english_description": "The user is registering their white cow named Ganga. She got her FMD vaccine on 10 November 2026, her local vet number is 9811012345, and she does not have livestock insurance.",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": null
+    },
+    "task_id": "task_1ee0d7bd",
+    "routing_decision": {
+      "routes": [
+        "RECORD"
+      ],
+      "animal_ref": "white cow named Ganga",
+      "medication_requested": false,
+      "missing_info": [],
+      "reason": "New animal registration with vaccination date and insurance status."
+    },
+    "agent_hops": [
+      {
+        "from": "orchestrator",
+        "to": "RECORD",
+        "latency_sec": 10.96,
+        "task_sent": {
+          "task_id": "task_1ee0d7bd",
+          "english_description": "The user is registering their white cow named Ganga. She got her FMD vaccine on 10 November 2026, her local vet number is 9811012345, and she does not have livestock insurance.",
+          "intent": "RECORD",
+          "animal_id": null,
+          "animal_ref": "white cow named Ganga",
+          "animal_context": "Registered animals for this user: None (new user).",
+          "previous_context": null,
+          "medication_requested": false,
+          "image_path": null,
+          "extra_data": {
+            "user_id": "nancy07",
+            "orchestrator_reason": "New animal registration with vaccination date and insurance status."
+          }
+        },
+        "response_received": {
+          "task_id": "task_1ee0d7bd",
+          "agent_name": "record_agent",
+          "status": "SUCCESS",
+          "summary": "Created a new record for Ganga, a white cow, and logged her FMD vaccination and lack of insurance.",
+          "proposed_updates": [],
+          "clarification_questions": [],
+          "missing_fields": [],
+          "data": {
+            "animal_id": "nancy07_e3b005",
+            "action_taken": "created",
+            "followup_reminders": [
+              "When was Ganga last vaccinated, and for which disease(s)?",
+              "Does Ganga have a Pashudhan / Pashu Aadhaar ear-tag government ID?"
+            ]
+          }
+        }
+      }
+    ],
+    "internal_logs": [
+      "[INFO] gauri_app.orchestrator.agent: Router raw output: {\n  \"routes\": [\"RECORD\"],\n  \"animal_ref\": \"white cow named Ganga\",\n  \"medication_requested\": false,\n  \"missing_info\": [],\n  \"reason\": \"New animal registration with vaccination date and insurance status.\"\n}",
+      "[INFO] gauri_app.record.record_agent: Record Agent raw output: {\n  \"status\": \"SUCCESS\",\n  \"animal_id\": \"nancy07_e3b005\",\n  \"action_taken\": \"created\",\n  \"summary\": \"Created a new record for Ganga, a white cow, and logged her FMD vaccination and lack of insurance.\",\n  \"clarification_questions\": [],\n  \"followup_reminders\": [\"When was Ganga last vaccinated, and for which disease(s)?\", \"Does Ganga have a Pashudhan / Pashu Aadhaar ear-tag government ID?\"]\n}"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": false,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: Ganga (cow, animal_id=nancy07_e3b005)",
+    "final_reply": "Created a new record for Ganga, a white cow, and logged her FMD vaccination and lack of insurance. Follow-up questions: When was Ganga last vaccinated, and for which disease(s)? | Does Ganga have a Pashudhan / Pashu Aadhaar ear-tag government ID?"
+  },
+  {
+    "turn": 3,
+    "timestamp": "2026-11-19 19:42:23 UTC",
+    "latency_sec": 2.6,
+    "input": {
+      "english_description": "The user says Ganga does not have a Pashudhan government ID, so they are sharing this photo of her to identify her.",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": "data/images/nancy07/nancy cow.jfif"
+    },
+    "task_id": "task_79acaf52",
+    "routing_decision": {
+      "routes": [
+        "HEALTH_CHECK"
+      ],
+      "animal_ref": "Ganga (cow, animal_id=nancy07_e3b005)",
+      "medication_requested": false,
+      "missing_info": [],
+      "reason": "Photo is sent to check breed or body condition score for an identified animal."
+    },
+    "agent_hops": [
+      {
+        "from": "orchestrator",
+        "to": "HEALTH_CHECK",
+        "latency_sec": 0.0,
+        "task_sent": {
+          "task_id": "task_79acaf52",
+          "english_description": "The user says Ganga does not have a Pashudhan government ID, so they are sharing this photo of her to identify her.",
+          "intent": "HEALTH_CHECK",
+          "animal_id": null,
+          "animal_ref": "Ganga (cow, animal_id=nancy07_e3b005)",
+          "animal_context": "Registered animals for this user: Ganga (cow, animal_id=nancy07_e3b005)",
+          "previous_context": null,
+          "medication_requested": false,
+          "image_path": "data/images/nancy07/nancy cow.jfif",
+          "extra_data": {
+            "user_id": "nancy07",
+            "orchestrator_reason": "Photo is sent to check breed or body condition score for an identified animal."
+          }
+        },
+        "response_received": {
+          "task_id": "task_79acaf52",
+          "agent_name": "health_check_agent_stub",
+          "status": "SUCCESS",
+          "summary": "[STUB] Processed image 'data/images/nancy07/nancy cow.jfif' for breed and BCS.",
+          "proposed_updates": [],
+          "clarification_questions": [],
+          "missing_fields": [],
+          "data": {
+            "image_path": "data/images/nancy07/nancy cow.jfif"
+          }
+        }
+      }
+    ],
+    "internal_logs": [
+      "[INFO] gauri_app.orchestrator.agent: Router raw output: {\n  \"routes\": [\"HEALTH_CHECK\"],\n  \"animal_ref\": \"Ganga (cow, animal_id=nancy07_e3b005)\",\n  \"medication_requested\": false,\n  \"missing_info\": [],\n  \"reason\": \"Photo is sent to check breed or body condition score for an identified animal.\"\n}"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": false,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: Ganga (cow, animal_id=nancy07_e3b005)",
+    "final_reply": "[STUB] Processed image 'data/images/nancy07/nancy cow.jfif' for breed and BCS."
+  }
+]

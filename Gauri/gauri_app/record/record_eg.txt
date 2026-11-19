@@ -1,0 +1,35 @@
+Task:
+user_id: farmer_01
+animal_ref: Rani, black Murrah buffalo
+english_description: Rani, my black Murrah buffalo, got her FMD vaccine on 3 November. I do not have a Pashudhan ID for her yet.
+orchestrator_reason: Factual vaccination date reported for an identified animal.
+
+Expected Final JSON (after calling find_animal -> none -> upsert_animal_record):
+{"status": "SUCCESS", "animal_id": "farmer_01_a1b2c3", "action_taken": "created", "summary": "Created new record for Rani (black Murrah buffalo) and logged FMD vaccination on 2026-11-03.", "clarification_questions": [], "followup_reminders": ["Could you share your local veterinarian's phone number for emergencies?", "Do you have livestock insurance for Rani?"]}
+
+Task:
+user_id: farmer_01
+animal_ref: Rani
+english_description: My local vet number is 9811012345 and Rani is eating normally today.
+orchestrator_reason: Owner provided vet contact and routine health status update.
+
+Expected Final JSON (after calling find_animal -> exact -> upsert_animal_record):
+{"status": "SUCCESS", "animal_id": "farmer_01_a1b2c3", "action_taken": "updated", "summary": "Updated Rani's local vet number and logged today's normal health condition.", "clarification_questions": [], "followup_reminders": []}
+
+Task:
+user_id: farmer_02
+animal_ref: buffalo
+english_description: My buffalo got vaccinated today.
+orchestrator_reason: Vaccination update reported but animal reference is generic.
+
+Expected Final JSON (after calling find_animal -> multiple matches: Rani, Bhuri):
+{"status": "CLARIFICATION_REQUIRED", "animal_id": null, "action_taken": "none", "summary": "Multiple buffaloes matched ('Rani' and 'Bhuri'); owner must confirm which animal was vaccinated.", "clarification_questions": ["You have two buffaloes registered: Rani and Bhuri. Which one got vaccinated today?"], "followup_reminders": []}
+
+Task:
+user_id: farmer_02
+animal_ref: null
+english_description: Got the FMD shot yesterday.
+orchestrator_reason: Vaccine fact reported without naming the animal.
+
+Expected Final JSON (after calling list_household_animals -> 2 animals exist):
+{"status": "CLARIFICATION_REQUIRED", "animal_id": null, "action_taken": "none", "summary": "No animal was specified for the FMD vaccination update.", "clarification_questions": ["Which animal received the FMD vaccine yesterday — Rani or Bhuri?"], "followup_reminders": []}

@@ -1,0 +1,294 @@
+[
+  {
+    "turn": 1,
+    "timestamp": "2026-11-19 19:57:11 UTC",
+    "latency_sec": 16.73,
+    "input": {
+      "english_description": "The user is registering their white cow named Ganga. She got her FMD vaccine on 10 November 2026, her local vet number is 9811012345, and she does not have livestock insurance.",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": null
+    },
+    "task_id": "task_906cefd5",
+    "routing_decision": {
+      "routes": [
+        "RECORD"
+      ],
+      "animal_ref": "white cow named Ganga",
+      "medication_requested": false,
+      "missing_info": [],
+      "reason": "New animal registration with vaccination date and other details provided."
+    },
+    "agent_hops": [
+      {
+        "from": "orchestrator",
+        "to": "RECORD",
+        "latency_sec": 9.94,
+        "task_sent": {
+          "task_id": "task_906cefd5",
+          "english_description": "The user is registering their white cow named Ganga. She got her FMD vaccine on 10 November 2026, her local vet number is 9811012345, and she does not have livestock insurance.",
+          "intent": "RECORD",
+          "animal_id": null,
+          "animal_ref": "white cow named Ganga",
+          "animal_context": "Registered animals for this user: None (new user).",
+          "previous_context": null,
+          "medication_requested": false,
+          "image_path": null,
+          "extra_data": {
+            "user_id": "nancy",
+            "orchestrator_reason": "New animal registration with vaccination date and other details provided."
+          }
+        },
+        "response_received": {
+          "task_id": "task_906cefd5",
+          "agent_name": "record_agent",
+          "status": "SUCCESS",
+          "summary": "Created a new record for Ganga, a white cow, and logged her FMD vaccination on 2026-11-10.",
+          "proposed_updates": [],
+          "clarification_questions": [],
+          "missing_fields": [],
+          "data": {
+            "animal_id": "nancy_705f08",
+            "action_taken": "created",
+            "followup_reminders": [
+              "Could you share a photo of Ganga for easy identification?"
+            ]
+          }
+        }
+      }
+    ],
+    "internal_logs": [
+      "[INFO] gauri_app.orchestrator.agent: Router raw output: {\"routes\": [\"RECORD\"], \"animal_ref\": \"white cow named Ganga\", \"medication_requested\": false, \"missing_info\": [], \"reason\": \"New animal registration with vaccination date and other details provided.\"}",
+      "[INFO] gauri_app.record.record_agent: Record Agent raw output: {\n  \"status\": \"SUCCESS\",\n  \"animal_id\": \"nancy_705f08\",\n  \"action_taken\": \"created\",\n  \"summary\": \"Created a new record for Ganga, a white cow, and logged her FMD vaccination on 2026-11-10.\",\n  \"clarification_questions\": [],\n  \"followup_reminders\": [\"Could you share a photo of Ganga for easy identification?\"]\n}"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": false,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+    "final_reply": "Created a new record for Ganga, a white cow, and logged her FMD vaccination on 2026-11-10. Follow-up questions: Could you share a photo of Ganga for easy identification?"
+  },
+  {
+    "turn": 2,
+    "timestamp": "2026-11-19 19:57:45 UTC",
+    "latency_sec": 7.94,
+    "input": {
+      "english_description": "The user says Ganga does not have a Pashudhan government ID, so they are sharing this photo of her to identify her.",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": "data/images/nancy/nancy cow.jfif"
+    },
+    "task_id": "task_effc0aef",
+    "routing_decision": {
+      "routes": [
+        "RECORD"
+      ],
+      "animal_ref": "Ganga (cow, animal_id=nancy_705f08)",
+      "medication_requested": false,
+      "missing_info": [],
+      "reason": "Owner updated Pashudhan ID status to no and shared an identification photo for the animal record."
+    },
+    "agent_hops": [
+      {
+        "from": "orchestrator",
+        "to": "RECORD",
+        "latency_sec": 5.5,
+        "task_sent": {
+          "task_id": "task_effc0aef",
+          "english_description": "The user says Ganga does not have a Pashudhan government ID, so they are sharing this photo of her to identify her.",
+          "intent": "RECORD",
+          "animal_id": null,
+          "animal_ref": "Ganga (cow, animal_id=nancy_705f08)",
+          "animal_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+          "previous_context": null,
+          "medication_requested": false,
+          "image_path": "data/images/nancy/nancy cow.jfif",
+          "extra_data": {
+            "user_id": "nancy",
+            "orchestrator_reason": "Owner updated Pashudhan ID status to no and shared an identification photo for the animal record."
+          }
+        },
+        "response_received": {
+          "task_id": "task_effc0aef",
+          "agent_name": "record_agent",
+          "status": "SUCCESS",
+          "summary": "Updated Ganga's record to indicate she does not have a Pashudhan government ID and added an identification photo.",
+          "proposed_updates": [],
+          "clarification_questions": [],
+          "missing_fields": [],
+          "data": {
+            "animal_id": "nancy_705f08",
+            "action_taken": "updated",
+            "followup_reminders": []
+          }
+        }
+      }
+    ],
+    "internal_logs": [
+      "[INFO] gauri_app.orchestrator.agent: Router raw output: {\"routes\": [\"RECORD\"], \"animal_ref\": \"Ganga (cow, animal_id=nancy_705f08)\", \"medication_requested\": false, \"missing_info\": [], \"reason\": \"Owner updated Pashudhan ID status to no and shared an identification photo for the animal record.\"}",
+      "[INFO] gauri_app.record.record_agent: Record Agent raw output: {\n  \"status\": \"SUCCESS\",\n  \"animal_id\": \"nancy_705f08\",\n  \"action_taken\": \"updated\",\n  \"summary\": \"Updated Ganga's record to indicate she does not have a Pashudhan government ID and added an identification photo.\",\n  \"clarification_questions\": [],\n  \"followup_reminders\": []\n}"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": false,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+    "final_reply": "Updated Ganga's record to indicate she does not have a Pashudhan government ID and added an identification photo."
+  },
+  {
+    "turn": 3,
+    "timestamp": "2026-11-19 19:58:12 UTC",
+    "latency_sec": 1.88,
+    "input": {
+      "english_description": "The user says Ganga has been eating less since morning and seems a bit dull.",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": null
+    },
+    "task_id": "task_ccda7a49",
+    "routing_decision": {
+      "routes": [
+        "TRIAGE"
+      ],
+      "animal_ref": "Ganga",
+      "medication_requested": false,
+      "missing_info": [],
+      "reason": "Active symptom of reduced appetite and dullness reported for Ganga."
+    },
+    "agent_hops": [
+      {
+        "from": "orchestrator",
+        "to": "TRIAGE",
+        "latency_sec": 0.0,
+        "task_sent": {
+          "task_id": "task_ccda7a49",
+          "english_description": "The user says Ganga has been eating less since morning and seems a bit dull.",
+          "intent": "TRIAGE",
+          "animal_id": null,
+          "animal_ref": "Ganga",
+          "animal_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+          "previous_context": null,
+          "medication_requested": false,
+          "image_path": null,
+          "extra_data": {
+            "user_id": "nancy",
+            "orchestrator_reason": "Active symptom of reduced appetite and dullness reported for Ganga."
+          }
+        },
+        "response_received": {
+          "task_id": "task_ccda7a49",
+          "agent_name": "triage_agent_stub",
+          "status": "SUCCESS",
+          "summary": "[STUB] Triage assessed for 'Ganga'. Vet Card drafted.",
+          "proposed_updates": [],
+          "clarification_questions": [],
+          "missing_fields": [],
+          "data": {
+            "urgency": "MODERATE",
+            "medication_requested": false
+          }
+        }
+      }
+    ],
+    "internal_logs": [
+      "[INFO] gauri_app.orchestrator.agent: Router raw output: {\"routes\": [\"TRIAGE\"], \"animal_ref\": \"Ganga\", \"medication_requested\": false, \"missing_info\": [], \"reason\": \"Active symptom of reduced appetite and dullness reported for Ganga.\"}"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": false,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+    "final_reply": "[STUB] Triage assessed for 'Ganga'. Vet Card drafted."
+  },
+  {
+    "turn": 4,
+    "timestamp": "2026-11-19 19:58:27 UTC",
+    "latency_sec": 2.08,
+    "input": {
+      "english_description": "The user is asking which antibiotic injection and dosage they should give Ganga for her fever.",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": null
+    },
+    "task_id": "task_3b663a0a",
+    "routing_decision": {
+      "routes": [
+        "TRIAGE"
+      ],
+      "animal_ref": "Ganga",
+      "medication_requested": true,
+      "missing_info": [],
+      "reason": "Active symptom of fever reported for Ganga, requiring triage and medication."
+    },
+    "agent_hops": [
+      {
+        "from": "orchestrator",
+        "to": "TRIAGE",
+        "latency_sec": 0.0,
+        "task_sent": {
+          "task_id": "task_3b663a0a",
+          "english_description": "The user is asking which antibiotic injection and dosage they should give Ganga for her fever.",
+          "intent": "TRIAGE",
+          "animal_id": null,
+          "animal_ref": "Ganga",
+          "animal_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+          "previous_context": null,
+          "medication_requested": true,
+          "image_path": null,
+          "extra_data": {
+            "user_id": "nancy",
+            "orchestrator_reason": "Active symptom of fever reported for Ganga, requiring triage and medication."
+          }
+        },
+        "response_received": {
+          "task_id": "task_3b663a0a",
+          "agent_name": "triage_agent_stub",
+          "status": "SUCCESS",
+          "summary": "[STUB] Triage assessed for 'Ganga'. Vet Card drafted. Remind owner that Gauri cannot prescribe drugs.",
+          "proposed_updates": [],
+          "clarification_questions": [],
+          "missing_fields": [],
+          "data": {
+            "urgency": "MODERATE",
+            "medication_requested": true
+          }
+        }
+      }
+    ],
+    "internal_logs": [
+      "[INFO] gauri_app.orchestrator.agent: Router raw output: {\n  \"routes\": [\"TRIAGE\"],\n  \"animal_ref\": \"Ganga\",\n  \"medication_requested\": true,\n  \"missing_info\": [],\n  \"reason\": \"Active symptom of fever reported for Ganga, requiring triage and medication.\"\n}"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": false,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+    "final_reply": "Note: Gauri cannot recommend medicines, injections, or dosages. [STUB] Triage assessed for 'Ganga'. Vet Card drafted. Remind owner that Gauri cannot prescribe drugs."
+  },
+  {
+    "turn": 5,
+    "timestamp": "2026-11-19 19:58:35 UTC",
+    "latency_sec": 0.0,
+    "input": {
+      "english_description": "The user says Ganga's stomach is swollen like a drum and she is struggling to breathe.",
+      "transcription_confidence": 1.0,
+      "flagged_issues": [],
+      "image_path": null
+    },
+    "task_id": "task_38dbeac3",
+    "routing_decision": {
+      "routes": [
+        "EMERGENCY"
+      ],
+      "animal_ref": "Ganga",
+      "medication_requested": false,
+      "missing_info": [],
+      "reason": "Deterministic emergency red flags: ['severe_bloating', 'choking_or_breathing_distress']"
+    },
+    "agent_hops": [],
+    "internal_logs": [
+      "[WARNING] gauri_app.core.safety: EMERGENCY_TRIGGERED categories=['severe_bloating', 'choking_or_breathing_distress'] phrases=['stomach is swollen like a drum', 'struggling to breathe']"
+    ],
+    "awaiting_clarification": false,
+    "escalated_to_vet": true,
+    "output_guard_triggered": false,
+    "session_context": "Registered animals for this user: Ganga (cow, animal_id=nancy_705f08)",
+    "final_reply": "EMERGENCY detected. Escalate immediately to local veterinarian or 1962 helpline."
+  }
+]
